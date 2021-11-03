@@ -1,0 +1,228 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+:root{
+    --bgcol: #fbfaf8;
+    --butcol: #0063DA;
+    --butselcol: #5a9beb;
+    --secgray: #7A7A7A;
+    --dkgray: #707070;
+}
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    /*outline: 1px solid red;*/
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    background-color: var(--bgcol);
+}
+
+
+/* ANIMATIONS */
+/**
+ * ----------------------------------------
+ * animation fadein
+ * ----------------------------------------
+ */
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+     }
+}
+
+
+/**
+ * ----------------------------------------
+ * animation slide-in-bottom
+ * ----------------------------------------
+ */
+ @-webkit-keyframes slide-in-bottom {
+    0% {
+      -webkit-transform: translateY(1000px);
+              transform: translateY(1000px);
+      opacity: 0;
+    }
+    100% {
+      -webkit-transform: translateY(0);
+              transform: translateY(0);
+      opacity: 1;
+    }
+  }
+@keyframes slide-in-bottom {
+  0% {
+    -webkit-transform: translateY(1000px);
+            transform: translateY(1000px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/**
+ * ----------------------------------------
+ * animation floating
+ * ----------------------------------------
+ */
+@keyframes floating {
+    0% { transform: translate(0,  0px); }
+    50% { transform: translate(0, 10px); }
+    100% { transform: translate(0, -0px); }   
+}
+  
+/*-------------------------------------------------------------------*/
+/* NAVIGATION */
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px 3%;
+}
+
+header li, a{
+    font-weight: 500;
+    font-size: 18px;
+    color: #000;
+    text-decoration: none;
+}
+
+.logo{
+    cursor: pointer;
+    width: 250px;
+}
+
+.nav-links{
+    list-style: none;
+}
+
+.nav-links li{
+    display: inline-block;
+    padding: 0 30px;
+    float: left;
+}
+
+.nav-extra{
+    list-style: none;
+}
+
+.nav-extra li{
+    display: inline-block;
+    padding: 0 20px;
+    float: left;
+}
+
+#alignment{
+    font-size: 28px;
+    margin-left: 40px;
+    cursor: pointer;
+}
+
+/* OVERALL */
+.btn{
+    color: white;
+    padding: 15px 35px;
+    border-radius: 6px;
+    font-weight: 400;
+    background-color: var(--butcol);
+    transition: 0.15s ease 0s;
+}
+
+.btn:hover{
+    background-color: var(--butselcol);
+}
+
+/*HERO CONTENT*/
+.container{
+    display: flex;
+    margin: auto;
+    margin-top: 200px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    animation: fadeInAnimation ease 3s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+
+.hero-text{
+    padding: 0 25%;
+}
+
+#highlight{
+    padding: 0 5px;
+    background: linear-gradient(
+        to bottom,
+        transparent 50%,
+        #fce041 50%
+    );
+}
+
+.floating{
+    animation-name: floating;
+    animation-duration: 6s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+
+.container h2{
+    font-weight: 400;
+    font-size: 28px;
+    color: var(--secgray);
+    margin-bottom: 25px;
+}
+
+.container h1{
+    font-size: 68px;
+    font-weight: 800;
+    margin-bottom: 30px;
+}
+
+.selector{
+    display: flex;
+    margin-top: 100px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 200px;
+    -webkit-animation: slide-in-bottom 1.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    animation: slide-in-bottom 1.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+.selector h3{
+    font-weight: 400;
+    font-size: 18px;
+    color: var(--secgray);
+    position:relative;
+    z-index:1;
+}
+
+.selector-section{
+    background-color: white;
+    padding: 40px 50px;
+    border-radius: 6px;
+    box-shadow: 0 10px 50px  rgba(0,0,0,0.25);
+    transition: 0.3s ease 0s;
+}
+
+.selector-section:hover{
+    transform: scaleX(1.05) scaleY(1.05);
+}
+
+select{
+    border: none;
+    width: 350px;
+    margin-right: 40px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--secgray);
+    font-size: 1.3rem;
+    font-weight: 600;
+}
